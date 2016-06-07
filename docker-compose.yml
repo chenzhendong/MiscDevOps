@@ -1,0 +1,49 @@
+mysql-data:
+    image: ubuntu:latest
+    volumes:
+     - /var/lib/mysql    
+
+wordpress-data:
+    image: ubuntu:latest
+    volumes:
+     - /var/www/html  
+
+mysql:
+    image: mysql:latest
+    volumes_from:
+     - mysql-data
+    environment:
+     - MYSQL_ROOT_PASSWORD=passwd
+
+wordpress:
+    image: wordpress
+    links:
+     - mysql
+    volumes_from:
+     - wordpress-data
+    environment:
+     - WORDPRESS_DB_PASSWORD=passwd
+     - WORDPRESS_DB_NAME=wordpress
+    expose:
+     - "80"
+
+discuz:
+    image: skyzhou/docker-discuz
+    links:
+     - mysql
+    expose:
+     - "80"
+
+haproxy:
+  image: haproxy:latest
+  volumes:
+   - haproxy:/haproxy-override
+  links:
+   - wordpress
+   - discuz
+  ports:
+   - "80:80"
+  
+  expose:
+   - "80"
+  
