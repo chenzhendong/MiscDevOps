@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <profiles>
+  
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://usjnrnlpap01.usac.mmm.com:8080/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://usjnrnlpap01.usac.mmm.com:8080/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>http://usjnrnlpap01.usac.mmm.com:8080/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>http://usjnrnlpap01.usac.mmm.com:8080/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory-silver-spring</id>
+    </profile>
+    
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>libs-release</name>
+          <url>http://mspdvmav01.mmm.com:8081/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>libs-snapshot</name>
+          <url>http://mspdvmav01.mmm.com:8081/artifactory/libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>http://mspdvmav01.mmm.com:8081/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>http://mspdvmav01.mmm.com:8081/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory-st-paul</id>
+    </profile>
+    
+    
+  </profiles>
+
+
+ <servers>  <server>    <id>USJNRNLPAP01</id>    <username>admin</username>    <password>password</password>  </server></servers>  
+  
+  <activeProfiles>
+    <activeProfile>artifactory-silver-spring</activeProfile>
+    <!-- <activeProfile>artifactory-st-paul</activeProfile> -->
+  </activeProfiles>
+</settings>
