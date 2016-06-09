@@ -12,7 +12,7 @@ RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binar
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
  
 ## create user and setup sudoers
-RUN useradd -m camelot; echo "camelot:bori6tin" | chpasswd; mkdir -p /home/camelot/.ssh; \
+RUN useradd -m camelot; echo "camelot:changeit" | chpasswd; mkdir -p /home/camelot/.ssh; \
 mkdir -p /home/camelot/.m2; \
 touch /home/camelot/.ssh/authorized_keys; \
 chown -R camelot /home/camelot; chmod 600 /home/camelot/.ssh/authorized_keys; \
