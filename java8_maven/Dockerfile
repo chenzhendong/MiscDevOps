@@ -6,7 +6,7 @@ RUN yum -y update; \
  yum -y update; \
  yum clean all 
 
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk PATH=${JAVA_HOME}/bin:${PATH} MAVEN_VERSION=3.3.3 MAVEN_HOME=/usr/share/maven PATH=${MAVEN_HOME}/bin:${PATH}
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk PATH=${JAVA_HOME}/bin:${PATH} MAVEN_VERSION=3.3.3 MAVEN_HOME=/usr/share/maven PATH=${MAVEN_HOME}/bin:${PATH} TZ=America/New_York
 RUN curl -fsSL http://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/binaries/apache-maven-$MAVEN_VERSION-bin.tar.gz | tar xzf - -C /usr/share \
   && mv /usr/share/apache-maven-$MAVEN_VERSION /usr/share/maven \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
@@ -19,7 +19,6 @@ chown -R camelot /home/camelot; chmod 600 /home/camelot/.ssh/authorized_keys; \
 chmod 700 /home/camelot/.ssh; \
 echo "camelot    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/camelot; \
 echo "America/New_York" > /etc/timezone; \
-echo "export TZ=America/New_York" >> /etc/bashrc; \
 /usr/bin/ssh-keygen -A
 
 ADD ./settings.xml /home/camelot/.m2/
