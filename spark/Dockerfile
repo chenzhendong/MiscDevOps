@@ -1,4 +1,4 @@
-FROM centos/java:v2
+FROM centos/java8:v2
 
 RUN curl -s http://apache.claz.org/spark/spark-1.6.1/spark-1.6.1-bin-hadoop2.6.tgz | tar -xz -C /usr/share; \
 cd /usr/share &&  ln -s spark-1.6.1-bin-hadoop2.6 spark; \
