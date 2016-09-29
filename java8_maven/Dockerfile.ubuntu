@@ -1,0 +1,27 @@
+FROM ubuntu:latest
+
+RUN apt-get -y update; \
+	apt-get -y install apt-utils; \
+	apt-get -y install git vim curl tar subversion sudo wget netcat unzip lsof net-tools; \
+	apt-get -y install openssh-server python python-pip build-essential; \
+	pip install --upgrade pip;  \
+	apt-get -y install openjdk-8-jdk maven; \    
+    apt-get clean
+
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+RUN useradd -m zchen; echo "zchen:changeit" | chpasswd; \
+	mkdir -p /home/zchen/.ssh; \
+	mkdir -p /home/zchen/.m2; \
+	touch /home/zchen/.ssh/authorized_keys; \
+	chown -R zchen:zchen /home/zchen; chmod 600 /home/zchen/.ssh/authorized_keys; \
+	chmod 700 /home/zchen/.ssh; \
+	usermod -s /bin/bash zchen; \
+	echo "zchen    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/zchen; \
+	echo "America/New_York" > /etc/timezone; \
+	mkdir -p /var/run/sshd; \
+	/usr/bin/ssh-keygen -A
+
+USER zchen
+CMD ["/usr/sbin/sshd"]
+
