@@ -23,4 +23,4 @@ echo "America/New_York" > /etc/timezone; \
 
 ADD ./settings.xml /home/camelot/.m2/
 
-CMD ["/usr/sbin/sshd", "/bin/bash"]
+CMD ["/usr/sbin/sshd", "&&" ,"/bin/bash"]
