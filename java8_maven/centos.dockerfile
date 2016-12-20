@@ -25,3 +25,4 @@ echo "America/New_York" > /etc/timezone; \
 COPY ./settings.xml /home/${USER_NAME}/.m2/
 
 CMD ["/usr/sbin/sshd"]
+CMD ["/bin/bash"]
