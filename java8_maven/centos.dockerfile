@@ -21,6 +21,7 @@ echo "America/New_York" > /etc/timezone; \
 /usr/bin/ssh-keygen -A
 
 COPY ./settings.xml /home/zchen/.m2/
+
 USER zchen
-CMD ["/usr/sbin/sshd"]
-CMD ["/bin/bash"]
+EXPOSE 22
+CMD ["/usr/sbin/sshd", "-D"]
