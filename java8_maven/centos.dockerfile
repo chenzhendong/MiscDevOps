@@ -20,6 +20,8 @@ chmod 700 /home/zchen/.ssh; \
 echo "America/New_York" > /etc/timezone; \
 /usr/bin/ssh-keygen -A
 
+#yum install epel-release
+#yum install certbot
 COPY ./settings.xml /home/zchen/.m2/
 
 USER zchen
