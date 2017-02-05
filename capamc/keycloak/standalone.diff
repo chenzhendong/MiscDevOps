@@ -1,0 +1,11 @@
+371,372c371,372
+<                 <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+<                 <host name="default-host" alias="localhost">
+---
+>                 <http-listener name="default" socket-binding="http" redirect-socket="https" proxy-address-forwarding="true"/>
+> 		<host name="default-host" alias="localhost">
+488c488,489
+<         <socket-binding name="https" port="${jboss.https.port:8443}"/>
+---
+>         <socket-binding name="proxy-https" port="443"/>
+> 	<socket-binding name="https" port="${jboss.https.port:8443}"/>
