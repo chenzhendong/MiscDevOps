@@ -19,3 +19,8 @@ chown -R zchen /home/zchen; chmod 600 /home/zchen/.ssh/authorized_keys; \
 chmod 700 /home/zchen/.ssh; \
 echo "America/New_York" > /etc/timezone; \
 /usr/bin/ssh-keygen -A
+
+# docker create network
+docker network create rc
+docker run --network rc --name rc-web -p 8022:22 -itd centos /bin/bash
+docker run --network rc --name rc-mysql -v ~/data/rc-dev-mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=changeit -p 3316:3306 -d mysql:latest
