@@ -19,7 +19,7 @@ services:
        - db
      image: wordpress:latest
      volumes:
-       - wp_data:/var/www/html
+       - web_data:/var/www/html
      ports:
        - "80:80"
      restart: always
@@ -30,11 +30,11 @@ services:
        WORDPRESS_DB_PASSWORD: wordpress
        
    phpMyadmin:
-      depends_on:
+     depends_on:
        - db
-     image: phpmyadmin:latest     
+     image: phpmyadmin:latest    
      ports:
-       - "8080:80
+       - "8080:80"
      restart: always
      networks:
        - net
