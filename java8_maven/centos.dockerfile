@@ -26,4 +26,4 @@ COPY ./settings.xml /home/zchen/.m2/
 
 USER zchen
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-b"]
+CMD ["/bin/bash"]
