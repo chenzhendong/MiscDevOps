@@ -17,7 +17,7 @@ mkdir -p /home/zchen/.m2; \
 touch /home/zchen/.ssh/authorized_keys; \
 chown -R zchen /home/zchen; chmod 600 /home/zchen/.ssh/authorized_keys; \
 chmod 700 /home/zchen/.ssh; \
-echo "America/New_York" > /etc/timezone; \
+echo "America/New_York" > /etc/timezone; unlink /etc/localtime; ln -s /usr/share/zoneinfo/America/New_York /etc/localtime \
 /usr/bin/ssh-keygen -A
 
 #yum install epel-release
