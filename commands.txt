@@ -1,0 +1,2 @@
+MAVEN:
+mvn -o -s /nlp/maven-repo/settings.xml -Dmaven.repo.local=/nlp/maven-repo/repository clean install
