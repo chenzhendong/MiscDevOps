@@ -2,11 +2,10 @@ FROM ubuntu:latest
 
 ENV PASSWD
 
-RUN apt-get update && apt-get install -y openssh-server sudo
-RUN useradd -m docker; echo "zchen:$PASSWD" | chpasswd; \
-	chown -R docker:root /home/docker; \	
-	usermod -s /bin/bash docker; \
-	echo "docker    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/docker; \
+RUN apt-get update && apt-get install -y openssh-server sudo vim
+RUN useradd -m docker; echo "docker:$PASSWD" | chpasswd; \
+	chown -R docker:docker /home/docker; \	
+	usermod -s /bin/bash -aG sudo,admin docker; \
 	echo "America/New_York" > /etc/timezone; \
 	mkdir -p /var/run/sshd; 
 
