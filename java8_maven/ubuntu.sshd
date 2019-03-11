@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV PASSWD
+ARG PASSWD=${SSH_PASSWD}
 
 RUN apt-get update && apt-get install -y openssh-server sudo vim
 RUN useradd -m docker; echo "docker:$PASSWD" | chpasswd; \
