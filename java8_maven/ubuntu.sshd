@@ -1,15 +1,15 @@
 FROM ubuntu:latest
 
-ARG PASSWD=${SSH_PASSWD}
+ARG PASSWD
 
 RUN apt-get update && apt-get install -y openssh-server sudo vim
 RUN useradd -m docker; echo "docker:$PASSWD" | chpasswd; \
 	chown -R docker:docker /home/docker; \	
-	usermod -s /bin/bash -aG sudo,admin docker; \
+	usermod -s /bin/bash docker; \
+	echo "docker    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/docker; \
 	echo "America/New_York" > /etc/timezone; \
-	mkdir -p /var/run/sshd; 
-
-USER docker
+	mkdir -p /var/run/sshd; \
+	/usr/bin/ssh-keygen -A
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
