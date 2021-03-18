@@ -42,6 +42,6 @@ RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | 
  source /home/centos/.bashrc; \
  nvm install --lts 
 
-EXPOSE 22 80 443
+EXPOSE 22 80 443 8080 3000
 CMD ["sudo", "/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
  
