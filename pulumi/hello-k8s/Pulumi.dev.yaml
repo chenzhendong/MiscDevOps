@@ -1,0 +1,2 @@
+config:
+  hello-k8s:isMinikube: "false"
