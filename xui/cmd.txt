@@ -55,3 +55,43 @@ sudo -s
    55  docker compose up -d
    56  ls
    57  history
+
+sudo
+
+apt update
+    2  cat /etc/resolv.conf 
+    3  vi /etc/resolv.conf 
+    4  apt update
+    5  vi /etc/resolv.conf 
+    6  apt update
+    7  ping security.ubuntu.com
+    8  vi /etc/resolv.conf 
+    9  ping security.ubuntu.com
+   10  apt update
+   11  for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+   12  # Add Docker's official GPG key:
+   13  sudo apt-get update
+   14  sudo apt-get install ca-certificates curl gnupg
+   15  sudo install -m 0755 -d /etc/apt/keyrings
+   16  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+   17  sudo chmod a+r /etc/apt/keyrings/docker.gpg
+   18  # Add the repository to Apt sources:
+   19  echo   "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+   20    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   21  sudo apt-get update
+   22  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+   23  groupadd docker
+   24  usermod
+   25  usermod -aG docker ubuntu
+   26  cd /etc/netplan/
+   27  ls
+   28  cat 50
+   29  cat 50-cloud-init.yaml 
+   30  cp 50-cloud-init.yaml 50-cloud-init.yaml.bak
+   31  vi 50-cloud-init.yaml
+   32  reboot
+   33  which certbot
+   34  crontab -e
+   35  ls
+   36  history
+
