@@ -1,0 +1,57 @@
+sudo -s
+    2  docker run hello-world
+    3  sudo vi /etc/resolv.conf 
+    4  sudo -s
+    5  cat /etc/resolv.conf 
+    6  ping google.com
+    7  docker run hello-world
+    8  ls
+    9  docker compose
+   10  ls
+   11  pwd
+   12  mkdir xray
+   13  cd xray/
+   14  vi compose.yaml
+   15  cd ..
+   16  rm -fr xray/
+   17  mkdir x-ui && cd x-ui
+   18  wget https://raw.githubusercontent.com//chasing66/x-ui/main/docker-compose.yml
+   19  docker compose up -d
+   20  docker ps
+   21  ls
+   22  cat docker-compose.yml 
+   23  docker compose down
+   24  docker ps
+   25  ls
+   26  ls cert/
+   27  ls db
+   28  cat docker-compose.yml 
+   29  sudo apt update
+   30  sudo apt install snapd nginx
+   31  sudo snap install core
+   32  sudo snap refresh core
+   33  sudo snap install --classic certbot
+   34  sudo ln -s /snap/bin/certbot /usr/bin/certbot
+   35  touch /etc/nginx/conf.d/xui.conf
+   36  sudo touch /etc/nginx/conf.d/xui.conf
+   37  sudo vi /etc/nginx/conf.d/xui.conf
+   38  ifconfig
+   39  ip addr
+   40  ls
+   41  ping proxy.ourpage.us
+   42  ls
+   43  sudo vi /etc/nginx/conf.d/xui.conf
+   44  cd x-ui/
+   45  vi docker-compose.yml 
+   46  nginx -t
+   47  sudo nginx -t
+   48  certbot --nginx --agree-tos --no-eff-email --email chenzhendong@yahoo.com
+   49  sudo certbot --nginx --agree-tos --no-eff-email --email chenzhendong@yahoo.com
+   50  ls cert/
+   51  ngins -s reload
+   52  sudo nginx -s reload
+   53  sudo certbot renew
+   54  sudo -s
+   55  docker compose up -d
+   56  ls
+   57  history
